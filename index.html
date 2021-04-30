@@ -12,16 +12,31 @@
 	<ul>
 		<li><a href="product.html">Product</a></li>
 	</ul>
-	
+
 	<br>
-	
+
 	<div id="qrcode"></div>
-	
+
 	<script src="qr.js"></script>
-	
+
 	<script>
 		var qrcode = document.getElementById("qrcode");
 		new QRCode(qrcode, "No code.");
+
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q8MMHV4NM"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-5Q8MMHV4NM');
+
 	</script>
 
 </body>
