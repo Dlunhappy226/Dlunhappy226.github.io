@@ -2,3 +2,12 @@
 	list-style: none;
 	background-color: #4a4a4a
 }
+
+.menu_bar li {
+	
+}
+
+.menu_bar li a {
+	text-decoration: none;
+	color: white;
+}
