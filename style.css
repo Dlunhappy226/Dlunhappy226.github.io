@@ -9,7 +9,7 @@ body {
 }
 
 .menu_bar li {
-	
+	float: left;
 }
 
 .menu_bar li a {
