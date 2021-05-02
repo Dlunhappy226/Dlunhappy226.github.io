@@ -7,6 +7,7 @@ body {
 	background-color: #4a4a4a;
 	margin: 0px;
 	padding: 0px;
+	overflow: hidden;
 }
 
 .menu_bar li {
