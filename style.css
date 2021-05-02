@@ -6,6 +6,7 @@ body {
 	list-style: none;
 	background-color: #4a4a4a;
 	margin: 0px;
+	padding: 0px;
 }
 
 .menu_bar li {
@@ -16,4 +17,5 @@ body {
 	text-decoration: none;
 	color: white;
 	display: block;
+	padding: 14px 16px;
 }
