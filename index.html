@@ -10,14 +10,20 @@
 	<ul class="menu_bar">
 		<li><a href="index.html">Home</a></li>
 		<li><a href="product.html">Product</a></li>
-		<li><a href="product.html">Game</a></li>
-	</ul>
-
-	<ul>
-		<li><a href="https://github.com/Dlunhappy226/Roblox-hack" target="_blank">Fps</a></li>
+		<li><a href="game.html">Game</a></li>
 	</ul>
 
 	<br>
+
+	<div id="qrcode"></div>
+
+	<script src="qr.js"></script>
+
+	<script>
+		var qrcode = document.getElementById("qrcode");
+		new QRCode(qrcode, "No code.");
+
+	</script>
 </body>
 
 </html>
