@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+	<h1>Youtube video downloader</h1>
+	<input type="text" id="link">
+	<button id="start">Start</button>
+
+	<textarea id="re"></textarea>
+	<button id="read">Start</button>
+	<script>
+		document.getElementById("start").addEventListener("click", function() {
+			window.open("https://www.youtube.com/get_video_info?video_id=" + youtube_id, "_blank")
+		});
+
+		document.getElementById("read").addEventListener("click", function() {
+			var res = {};
+			var pars = document.getElementById("re").value.split('&');
+			var kv, k, v;
+			for (i in pars) {
+				kv = pars[i].split('=');
+				k = kv[0];
+				v = kv[1];
+				res[k] = decodeURIComponent(v);
+			}
+			var player_response = res["player_response"];
+			var player_responseJson = JSON.parse(player_response);
+			var streamingData = player_responseJson["streamingData"]
+			var formats = streamingData["formats"]
+			
+			console.log(formats);
+
+		});
+
+	</script>
+</body>
+
+</html>
