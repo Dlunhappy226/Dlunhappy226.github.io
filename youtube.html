@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+	<h1>Youtube video downloader</h1>
+	<h2>Step 1</h2>
+	<input type="text" id="link">
+	<button id="start">Start</button>
+
+	<h2>Step 2</h2>
+	<textarea id="re"></textarea>
+	<br>
+	<button id="read">Start</button>
+
+	<ul id="list"></ul>
+	<script>
+		document.getElementById("start").addEventListener("click", function() {
+			window.open("https://www.youtube.com/get_video_info?video_id=" + document.getElementById("link").value, "_blank")
+		});
+
+		document.getElementById("read").addEventListener("click", function() {
+			var res = {};
+			var pars = document.getElementById("re").value.split('&');
+			var kv, k, v;
+			for (i in pars) {
+				kv = pars[i].split('=');
+				k = kv[0];
+				v = kv[1];
+				res[k] = decodeURIComponent(v);
+			}
+			var player_response = res["player_response"];
+			var player_responseJson = JSON.parse(player_response);
+			var streamingData = player_responseJson["streamingData"];
+			var formats = streamingData["formats"];
+
+			var list = document.getElementById("list");
+
+			list.innerHTML = "";
+
+			for (var i = 0; i < formats.length; i++) {
+				var li = document.createElement("li")
+				li.style.margin = "5px"
+				list.appendChild(li)
+				var a = document.createElement("a")
+				a.innerHTML = formats[i].quality + " " + formats[i].qualityLabel
+				a.href = formats[i].url
+				a.target = "_blank"
+				li.appendChild(a)
+			}
+		});
+
+	</script>
+</body>
+
+</html>
