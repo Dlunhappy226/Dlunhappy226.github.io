@@ -3,3 +3,7 @@ var re_onload = function(){
         "sitekey" : "6LdwvTgdAAAAAHOg1zDWhL5Ouci5ddslFp0i1VZC"
     });
 };
+
+document.body.addEventListener("change", function(){
+    console.log("change")
+});
