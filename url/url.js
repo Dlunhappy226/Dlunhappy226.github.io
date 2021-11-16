@@ -5,6 +5,7 @@ var re_onload = function(){
 };
 
 setInterval(function(){
+    console.log("check")
     var response = grecaptcha.getResponse();
     if(response.length != 0){
         console.log("yes");
