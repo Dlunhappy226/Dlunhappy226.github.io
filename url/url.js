@@ -4,6 +4,9 @@ var re_onload = function(){
     });
 };
 
-document.body.addEventListener("change", function(){
-    console.log("change")
-});
+setInterval(function(){
+    var response = grecaptcha.getResponse();
+    if(response.length != 0){
+        console.log("yes");
+    }
+},1);
