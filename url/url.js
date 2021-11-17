@@ -7,9 +7,10 @@ var re_onload = function(){
     });
 };
 
-setInterval(function(){
+loop = setInterval(function(){
     var response = grecaptcha.getResponse();
     if(response.length != 0){
         window.location.href = urlParams.get("url");
+        clearInterval(loop);
     }
 },1);
