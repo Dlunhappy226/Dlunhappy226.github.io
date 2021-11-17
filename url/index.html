@@ -5,12 +5,12 @@
     </head>
     <body>
         <div id="recap"></div>
-        <script src="url.js"></script>
         <script src="https://www.google.com/recaptcha/api.js?onload=re_onload&render=explicit"></script>
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-analytics.js";
+            import { getDatabase } from "firebase/database";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
           
@@ -23,12 +23,15 @@
               storageBucket: "giturl.appspot.com",
               messagingSenderId: "725708939115",
               appId: "1:725708939115:web:22e9786f6abc98f26bf62e",
-              measurementId: "G-96KB1JG444"
+              measurementId: "G-96KB1JG444",
+              databaseURL: "https://giturl-default-rtdb.firebaseio.com",
             };
           
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const analytics = getAnalytics(app);
+            const database = getDatabase(app);
           </script>
+          <script src="url.js"></script>
     </body>
 </html>
